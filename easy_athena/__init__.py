@@ -10,9 +10,8 @@ import boto3
 
 class EasyAthena():
 
-
-    def __init__(self, output_bucket_name, output_prefix):
-        self._athena_client= boto3.client('athena')
+    def __init__(self, output_bucket_name, output_prefix, region_name='ap-northeast-2'):
+        self._athena_client= boto3.client('athena', region_name=region_name)
         self._output_prefix = output_prefix
         self._output_bucket_name = output_bucket_name
 
