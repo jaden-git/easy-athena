@@ -6,7 +6,7 @@ import io
 from setuptools import find_packages, setup
 
 setup(name='easy_athena',
-      version='0.0.2',
+      version='0.0.3',
       description='This package helps you use AWS Athena easily.',
       long_description="Please refer to the https://github.com/jaden-git/easy_athena",
       long_description_content_type="text/markdown",

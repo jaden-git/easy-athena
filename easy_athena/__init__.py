@@ -10,6 +10,7 @@ import boto3
 
 class EasyAthena():
 
+
     def __init__(self, output_bucket_name, output_prefix):
         self._athena_client= boto3.client('athena')
         self._output_prefix = output_prefix
@@ -108,4 +109,4 @@ class EasyAthena():
                 else:
                     break
 
-        return result        
+        return result
