@@ -26,10 +26,7 @@ class EasyAthena():
         def get_varchar_value(row):
             result = []
             for piece in row["Data"]:
-                value = ""
-                if "VarCharValue" in piece:
-                    value = piece["VarCharValue"]
-                result.append(value)
+                result.append(piece.get('VarCharValue', None))
 
             return result
             # return [piece["VarCharValue"] for piece in row["Data"]]
@@ -41,7 +38,7 @@ class EasyAthena():
             return result
 
         def get_var_char_values(d):
-            return [obj['VarCharValue'] for obj in d['Data']]
+            return [obj.get('VarCharValue', None) for obj in d['Data']]
 
         def parse(header, rows):
             header = get_var_char_values(header)
